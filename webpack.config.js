@@ -9,10 +9,10 @@ module.exports = {
   },
   module: {
     rules: [
-      /*     {
-            test: /.css$/i,
-            use: ['style-loader', 'css-loader'] style-loader hace que los archivos sean pasados a codigo js y el css loader hace que todos los archivos css puedan ser importados desde javascript
-          }, */
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'] /* style-loader hace que los archivos sean pasados a codigo js y el css loader hace que todos los archivos css puedan ser importados desde javascript */
+      },
       {
         test: /\.s[ac]ss$/i,
         use: [
