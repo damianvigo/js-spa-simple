@@ -1,13 +1,19 @@
-export const router = (route) => {
+import { pages } from '../controllers/index';
+
+let $content = document.getElementById('root');
+
+export const router = async (route) => {
+  $content.innerHTML = '';
   // console.log(route);
   switch (route) {
-    case '#/':
-      return console.log('home');
+    case '#/': {
+      return $content.appendChild(pages.home());
+    }
     case '#/posts':
-      return console.log('post!!!');
-    case '#/products':
-      return console.log('products!!!');
+      return $content.appendChild(await pages.posts());
+    /* case '#/products':
+      return console.log('products!!!'); */
     default:
-      return console.log('404!!!');
+      return $content.appendChild(pages.notFound());
   }
 };
